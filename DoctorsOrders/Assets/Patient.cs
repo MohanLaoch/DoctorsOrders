@@ -10,6 +10,8 @@ public class Patient : MonoBehaviour
     public float maxHorizontal = 600;
     public float minHorizontal = -600;
 
+    public Image Pills;
+
     public Sprite Patient1;
     public Sprite Patient2;
     public Sprite Patient3;
@@ -17,17 +19,39 @@ public class Patient : MonoBehaviour
     public Sprite Patient5;
 
     public int imgNumberCount;
+    public int PillNumberCount;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+
         GetComponent<Image>().sprite = Patient1;
+        Pills.sprite = Patient3;
         rectTransform = GetComponent<RectTransform>();
         Vector2 position = rectTransform.anchoredPosition;
 
         position.x = minHorizontal;
+    }
+    void Update()
+    {
+
+        Vector2 position = rectTransform.anchoredPosition;
+
+        position.x += speed * Time.deltaTime;
+
+        if (position.x > maxHorizontal)
+        {
+            position.x = minHorizontal;
+
+            ImageSwap();
+            PillSwap();
+
+
+        }
+
+        rectTransform.anchoredPosition = position;
     }
 
 
@@ -51,30 +75,36 @@ public class Patient : MonoBehaviour
                 GetComponent<Image>().sprite = Patient5;
                 imgNumberCount++;
                 break;
-                
+
         }
 
 
-
-      
-      
+       
+       
     }
-    void Update()
+    void PillSwap()
     {
-
-        Vector2 position = rectTransform.anchoredPosition;
-
-        position.x += speed * Time.deltaTime;
-
-        if (position.x > maxHorizontal)
+        switch (PillNumberCount)
         {
-            position.x = minHorizontal;
-
-            ImageSwap();
-            
+            case 0:
+                Pills.sprite = Patient3;
+                PillNumberCount++;
+                break;
+            case 1:
+                Pills.sprite = Patient2;
+                PillNumberCount++;
+                break;
+            case 2:
+                Pills.sprite = Patient5;
+                PillNumberCount++;
+                break;
+            case 3:
+                Pills.sprite = Patient3;
+                PillNumberCount++;
+                break;
 
         }
 
-        rectTransform.anchoredPosition = position;
+
     }
 }
