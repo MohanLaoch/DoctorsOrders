@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7806810606590184860}
   m_Layer: 0
   m_Name: MagentaCube
-  m_TagString: Magenta
+  m_TagString: Pill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
