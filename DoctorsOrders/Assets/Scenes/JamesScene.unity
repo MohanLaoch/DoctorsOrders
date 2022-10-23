@@ -464,6 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e66d4f9981d4ad45a6d9af703165fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1830881438}
   canvas: {fileID: 1856255825}
   prefab: {fileID: 1799157358}
 --- !u!225 &1232869029

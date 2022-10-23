@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
 {
+    [SerializeField] private Camera mainCamera;
     [SerializeField] private Canvas canvas;
 
     private RectTransform rectTransform;
@@ -41,8 +42,20 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 
         transform.localPosition = Vector3.zero;
 
-        Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Instantiate(prefab, (Vector2)spawnPosition, Quaternion.identity);
+        //Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //Instantiate(prefab, (Vector2)spawnPosition, Quaternion.identity);
+
+        Ray cameraRay = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        float rayLength;
+
+        if (groundPlane.Raycast(cameraRay, out rayLength))
+        {
+            Vector3 pointToLook = cameraRay.GetPoint(rayLength);
+
+            Instantiate(prefab, new Vector3(pointToLook.x, 1, pointToLook.z), Quaternion.identity);
+
+        }
 
     }
 
