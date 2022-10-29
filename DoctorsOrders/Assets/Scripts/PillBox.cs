@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class PillBox : MonoBehaviour
 {
-    public List<string> pillsInBox = new List<string>();
-
     private int numberOfPills;
-    public int pillsNeeded;
 
     public GameObject pillBox;
 
@@ -21,10 +18,9 @@ public class PillBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (numberOfPills == pillsNeeded)
+        if (numberOfPills == 1)
         {
             Instantiate(pillBox, new Vector3(7, 5, -5), Quaternion.identity);
-
             Destroy(this.gameObject);
         }
     }
@@ -34,7 +30,9 @@ public class PillBox : MonoBehaviour
         if (other.gameObject.tag == "Pill")
         {
             numberOfPills++;
-            pillsInBox.Add(other.gameObject.name);
+            scoreManager.pillsChosen.Add(other.gameObject.name);
+            scoreManager.CheckPill();
+            scoreManager.currentPill++;
             Destroy(other.gameObject);
         }
     }

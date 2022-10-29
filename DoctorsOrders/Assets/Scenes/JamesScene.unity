@@ -1244,6 +1244,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb61ce8babdb1784bb43995a2089d2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pillsNeeded:
+  - MagentaCube(Clone)
+  - PurpleCube(Clone)
+  - TealCube(Clone)
+  pillsChosen: []
+  currentPill: 1
+  correctPills: 0
 --- !u!4 &2097383433
 Transform:
   m_ObjectHideFlags: 0
