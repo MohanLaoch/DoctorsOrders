@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8332502657609859439}
   - component: {fileID: 8332502657609859438}
   - component: {fileID: 8332502657609859433}
-  - component: {fileID: 8332502657609859437}
   - component: {fileID: -4457418308435180793}
   - component: {fileID: -9104501778779558552}
   - component: {fileID: -6833074238649660180}
+  - component: {fileID: -9185091195181392687}
   m_Layer: 0
   m_Name: PillBox
   m_TagString: Untagged
@@ -102,19 +102,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8332502657609859437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332502657609859432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9000bb1840be024439150cd5b4d7acf6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PillBox: {fileID: 8332502657609859432}
 --- !u!65 &-4457418308435180793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -156,6 +143,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dbbccfb12cf93249b3a40bbef7b8d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-9185091195181392687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332502657609859432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c90d1777582024b92ad1f7806ee001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pillsInBox: []
+  pillsNeeded: 3
+  pillBox: {fileID: 8332502657609859432}
 --- !u!1 &8332502657790813641
 GameObject:
   m_ObjectHideFlags: 0
