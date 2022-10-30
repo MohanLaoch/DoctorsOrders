@@ -44,6 +44,7 @@ public class Patient : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("Clock");
 
         GetComponent<Image>().sprite = Patient1;
         Pills.sprite = Pill1;
