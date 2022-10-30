@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using EZCameraShake;
 
 public class Patient : MonoBehaviour
 {
+    public float Magnitude = 0.01f;
+    public float Roughness = 1f;
+    public float FadeoutTime = 0.1f;
+
+
+
     public float speed = 10f;
     public RectTransform rectTransform;
+    public float Shakearea = 350;
     public float maxHorizontal = 600;
     public float minHorizontal = -600;
 
@@ -46,10 +54,16 @@ public class Patient : MonoBehaviour
     }
     void Update()
     {
-
+       
         Vector2 position = rectTransform.anchoredPosition;
 
         position.x += speed * Time.deltaTime;
+        
+        if(position.x > Shakearea)
+        {
+            CameraShaker.Instance.ShakeOnce(5f, 5f, 0, 1f);
+            Debug.Log("shakenow");
+        }
 
         if (position.x > maxHorizontal)
         {
