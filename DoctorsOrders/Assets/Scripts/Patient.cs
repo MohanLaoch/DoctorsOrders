@@ -15,8 +15,18 @@ public class Patient : MonoBehaviour
     public Sprite Patient1;
     public Sprite Patient2;
     public Sprite Patient3;
-    public Sprite Patient4;
-    public Sprite Patient5;
+    
+
+    public Sprite Pill1;
+    public Sprite Pill2;
+    public Sprite Pill3;
+    public Sprite Pill4;
+    public Sprite Pill5;
+    public Sprite Pill6;
+    public Sprite Pill7;
+    public Sprite Pill8;
+    public Sprite Pill9;
+    public Sprite Pill10;
 
     public int imgNumberCount;
     public int PillNumberCount;
@@ -28,7 +38,7 @@ public class Patient : MonoBehaviour
     {
 
         GetComponent<Image>().sprite = Patient1;
-        Pills.sprite = Patient3;
+        Pills.sprite = Pill1;
         rectTransform = GetComponent<RectTransform>();
         Vector2 position = rectTransform.anchoredPosition;
 
@@ -67,15 +77,7 @@ public class Patient : MonoBehaviour
                 GetComponent<Image>().sprite = Patient3;
                 imgNumberCount++;
                 break;
-            case 2:
-                GetComponent<Image>().sprite = Patient4;
-                imgNumberCount++;
-                break;
-            case 3:
-                GetComponent<Image>().sprite = Patient5;
-                imgNumberCount++;
-                break;
-
+    
         }
 
 
@@ -87,20 +89,57 @@ public class Patient : MonoBehaviour
         switch (PillNumberCount)
         {
             case 0:
-                Pills.sprite = Patient3;
+                Pills.sprite = Pill2;
                 PillNumberCount++;
+                speed += 50;
                 break;
             case 1:
-                Pills.sprite = Patient2;
+                Pills.sprite = Pill3;
                 PillNumberCount++;
+                speed += 50;
+
                 break;
             case 2:
-                Pills.sprite = Patient5;
+                Pills.sprite = Pill4;
                 PillNumberCount++;
+                speed += 50;
+
                 break;
             case 3:
-                Pills.sprite = Patient3;
+                Pills.sprite = Pill5;
                 PillNumberCount++;
+                speed += 50;
+
+                break;
+            case 4:
+                Pills.sprite = Pill6;
+                PillNumberCount++;
+                speed += 50;
+
+                break;
+            case 5:
+                Pills.sprite = Pill7;
+                PillNumberCount++;
+                speed += 50;
+
+                break;
+            case 6:
+                Pills.sprite = Pill8;
+                PillNumberCount++;
+                speed += 50;
+
+                break;
+            case 7:
+                Pills.sprite = Pill9;
+                PillNumberCount++;
+                speed += 50;
+
+                break;
+            case 8:
+                Pills.sprite = Pill10;
+                PillNumberCount++;
+                speed += 50;
+
                 break;
 
         }
