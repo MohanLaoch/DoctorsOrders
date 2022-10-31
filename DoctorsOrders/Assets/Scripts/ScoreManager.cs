@@ -1,16 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
+    public Timer timer;
+    private float startTime;
+    public TMP_Text scoreText;
+    public GameObject scoreScreen;
+
+    [Header("Game Tracking")]
     public int currentPill = 1;
     public int correctPills = 0;
+    public float score = 0;
 
     [Header("Pill Order")]
     public string[] pillsNeeded;
 
     public List<string> pillsChosen = new List<string>();
+
+    public void Start()
+    {
+        startTime = timer.timeValue;
+    }
+
+    public void Update()
+    {
+        if (currentPill == 11)
+        {
+
+            FindObjectOfType<AudioManager>().Stop("Clock");
+
+            ScoreCalc();
+
+            scoreScreen.SetActive(true);
+
+            /*
+             * Stop timer audio
+             * Calculate score
+             * Show the score screen - backround, score text, button to restart 
+             */
+        }
+    }
+
+    public void ScoreCalc()
+    {
+        score = correctPills * startTime;
+        scoreText.text = score.ToString();
+        return;
+    }
 
     public void CheckPill()
     {
