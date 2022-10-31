@@ -20,7 +20,7 @@ public class PillBox : MonoBehaviour
     {
         if (numberOfPills == 1)
         {
-            Instantiate(pillBox, new Vector3(7, 5, -5), Quaternion.identity);
+            Instantiate(pillBox, new Vector3(0, 5, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

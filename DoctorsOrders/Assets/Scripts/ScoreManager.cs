@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
+    public int currentPill = 1;
+    public int correctPills = 0;
+
+    [Header("Pill Order")]
     public string[] pillsNeeded;
 
     public List<string> pillsChosen = new List<string>();
-
-    public int currentPill = 1;
-
-    public int correctPills = 0;
 
     public void CheckPill()
     {
@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
                 break;
             case 2:
                 if (pillsNeeded[1] == pillsChosen[1])
-                        correctPills++;
+                    correctPills++;
                 break;
             case 3:
                 if (pillsNeeded[2] == pillsChosen[2])
