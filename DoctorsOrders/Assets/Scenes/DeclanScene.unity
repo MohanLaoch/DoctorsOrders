@@ -1156,11 +1156,11 @@ PrefabInstance:
     - target: {fileID: 2662296910215511741, guid: c195954b2ddb8954985339ed0f675edb, type: 3}
       propertyPath: Patient2
       value: 
-      objectReference: {fileID: 21300000, guid: 1f97fa5b3737ff64d8b493c251840f0d, type: 3}
+      objectReference: {fileID: 21300000, guid: f03aed9a3bb6a9d498a40fc4e66abb85, type: 3}
     - target: {fileID: 2662296910215511741, guid: c195954b2ddb8954985339ed0f675edb, type: 3}
       propertyPath: Patient3
       value: 
-      objectReference: {fileID: 21300000, guid: 1f97fa5b3737ff64d8b493c251840f0d, type: 3}
+      objectReference: {fileID: 21300000, guid: 619eca37161d0aa4c87e74644723b711, type: 3}
     - target: {fileID: 2662296910215511741, guid: c195954b2ddb8954985339ed0f675edb, type: 3}
       propertyPath: Patient4
       value: 
